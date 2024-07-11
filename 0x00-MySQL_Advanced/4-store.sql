@@ -3,7 +3,7 @@ DROP TRIGGER IF EXISTS decreases_the_quantity;
 DELIMITER $$
 CREATE TRIGGER `decreases_the_quantity` 
 AFTER INSERT 
-ON order FOR EACH ROW
+ON orders FOR EACH ROW
 BEGIN
     UPDATE items
         SET quantity = quantity - NEW.number
